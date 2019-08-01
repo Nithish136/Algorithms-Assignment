@@ -1,3 +1,6 @@
+'''
+    Implementing stack data structure to convert prefix to postfix Notation (Reverse Polish Notation)
+'''
 class Stack :
     def __init__(self):
         self.stack = []
@@ -21,6 +24,29 @@ class Stack :
         if len(self.stack) < 1:
             return True
         return False
+'''    
+    The below to_postfix function is used to convert the Infix notation to the Postfix By using stack data structure 
+''' 
+
+def to_postfix(string):
+    for i in string:
+        ans = ''
+        pres = i
+        temp = Stack()
+        for j in range(len(pres)):
+            if pres[j] in ['+', '-', '*', '^', '/', '(']:
+                temp.push(pres[j])
+            elif pres[j] == ')':
+                pop_e = temp.pop()
+                while pop_e != '(' and pop_e != None :
+                    ans = ans + pop_e
+                    pop_e = temp.pop()
+                    #print(ans)
+            else:
+                ans = ans + pres[j]
+    return ans
+
+                
 def to_infix (string):
     #print(1,string)
     ans = ''
@@ -47,6 +73,7 @@ def to_infix (string):
     ans = operand.pop()
     print(ans)
 
+    
 '''
 l = Stack()
 l.push(23)
@@ -59,21 +86,7 @@ string = []
 for i in range(n):
     string.append(input())
 #print(string)
+ans = to_postfix(string)
 
-for i in string:
-    ans = ''
-    pres = i
-    temp = Stack()
-    for j in range(len(pres)):
-        if pres[j] in ['+', '-', '*', '^', '/', '(']:
-            temp.push(pres[j])
-        elif pres[j] == ')':
-            pop_e = temp.pop()
-            while pop_e != '(' and pop_e != None :
-                ans = ans + pop_e
-                pop_e = temp.pop()
-                #print(ans)
-        else:
-            ans = ans + pres[j]
     #print (ans)
-    to_infix(ans)
+to_infix(ans)
