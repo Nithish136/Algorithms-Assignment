@@ -9,6 +9,7 @@ def optimal_weight(W, w):
     result = 0
     c1 = W
     r1 = len(w)
+    # the above function initializes a 2D Array of size mXn with Zeroes using Numpy  
     value = numpy.zeros((r1+1 , c1+1))
     for i in range(r1+1):
         value[i][0]= 0
