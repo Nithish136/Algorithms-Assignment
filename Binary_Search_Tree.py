@@ -1,9 +1,15 @@
+'''
+    Implementing a Binary search tree Using Pyhon programming language
+'''
+
 class Node():
     def __init__(self, data = None):
         self.data  = data
         self.right = None
         self.left  = None
 '''
+Implementing a Linked List In Python
+
 class Linked_list():
     def __init__(self, data = None):
         self.head = Node(data)
@@ -27,8 +33,14 @@ class Linked_list():
         '''
 
 class Binary_tree():
+    
+    #init is a constructur that calls when an instance of structure is created
+    
     def __init__(self, head_val= None ):
         self.head = Node(head_val)  
+        
+    #insert method is used to insert a Node according to the proporty of Binary search tree  
+        
     def insert(self, value):
 
         def add(value, phead):
@@ -63,18 +75,26 @@ class Binary_tree():
             else:
                 new = Node(value)
                 self.head.left = new
-
+    
+    '''
+           Tree Traversals 
+           1. Inorder
+           2.Preorder
+           3.Postorder
+    '''
     def pre_order(self,phead = None):
         if phead:
             print (phead.data)
             self.pre_order(phead.left )
             self.pre_order(phead.right)
+            
     def in_order(self, phead ):
         #temp = 
         if phead:
             self.in_order(phead.left)
             print(phead.data)
             self.in_order(phead.right)
+            
     def post_order(self, phead):
         if phead:
             self.post_order(phead.left)
