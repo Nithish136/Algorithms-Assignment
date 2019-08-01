@@ -1,3 +1,3 @@
 # Algorithms-Assignment
-It consists of Assignments that i did when i was doing Learning Basic Algorithms Course
-I implement Knapsack problem using Dynamic Programming
+
+It consists of some of my assignmet problems with solutions that deal with Divide and Conquer and Dynamic Programing 
